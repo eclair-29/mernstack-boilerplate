@@ -7,7 +7,6 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "client": "npm start --prefix client",
     "client-install": "npm install --prefix client",
-    "eslint": "eslint ./",
     "server": "nodemon server.js",
     "start": "node server.js"
   },
