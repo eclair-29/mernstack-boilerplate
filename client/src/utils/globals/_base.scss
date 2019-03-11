@@ -1,0 +1,82 @@
+// Font Family Import: Poppins
+@import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600");
+
+// Font Family Import: Barlow Condensed
+@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:400,500,600|Ubuntu+Condensed");
+
+// Base Styles
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Barlow Condensed", sans-serif !important;
+  font-weight: 500 !important;
+  margin-bottom: 0 !important;
+}
+
+h1 {
+  font-size: 1.5rem !important;
+}
+
+p {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  line-height: 25px !important;
+  margin-bottom: 0 !important;
+}
+
+a {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  text-decoration: none !important;
+
+  &:focus {
+    outline: none !important;
+  }
+}
+
+div,
+main,
+section,
+header,
+nav,
+footer,
+label,
+strong,
+li,
+span {
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+}
+
+#{$all-text-inputs} {
+  border-radius: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+}
+
+#{$all-buttons} {
+  border-radius: 0 !important;
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 500 !important;
+}
