@@ -8,12 +8,12 @@ Before doing this procedure, I assume that you clone this repository...
 3. Run  `npm run dev` to run the client & server with concurrently. and __Congratulations!!__ You run your own mern stack app.
 
 #### Scripts
-| Script   | Description                               |
-| -------- | ----------------------------------------- |
-| `dev`    | run the client & server with concurrently |
-| `server` | run the application's server side only    |
-| `client` | run the application's client side only    |
-| `client` | run the application's client side only    |
+| Script           | Description                               |
+| ---------------- | ----------------------------------------------------------- |
+| `dev`            | run the client & server with concurrently                   |
+| `server`         | run the application's server side (express) only            |
+| `client-install` | [required to run] install all dependencies for react client |
+| `client`         | run the application's client side (create-react-app) only   |
 
 If you are kind and have a time to Fork this, then please do. Thank you!!
 
