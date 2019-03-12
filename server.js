@@ -17,7 +17,8 @@ app.use(bodyParser.json());
 
 // Connect to MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect(db, { useNewUrlParser: true })
+mongoose
+  .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB Atlas..."))
   .catch(err => console.log(err));
 
@@ -35,4 +36,6 @@ if (process.env.NODE_ENV === "production") {
 
 // Listen to a port
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`App is running & listening at port ${PORT}`));
+app.listen(PORT, () =>
+  console.log(`App is running & listening at port ${PORT}`)
+);
