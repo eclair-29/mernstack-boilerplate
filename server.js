@@ -1,19 +1,19 @@
 /* eslint no-console: "off" */
 const express = require("express");
-const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const config = require("config");
 
 const path = require("path");
 const info = require("./routes/api/info");
 
 // Require DB config
-const db = require("./configs/keys").mongodbURI;
+const db = config.get("mongodbURI");
 
 // Initialize app
 const app = express();
 
 // Use body parser middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 // Connect to MongoDB
 mongoose.Promise = global.Promise;
