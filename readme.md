@@ -19,11 +19,11 @@ Before doing this procedure, I assume that you clone this repository...
 
 #### MongoDB Configuration
 
-Replace the mongodb connection string at `configs/keys.js`with your own db connection string
+Replace the value of `mongodbURI`( mongodb connection string) at `config/default.json` with your own db connection string
 
 ```javascript
-mongodbURI: "<Connection String>",
-secretOrKey: "<Secret Key>"
+mongodbURI: "<YOUR_MONGODB_CONNECTION_STRING",
+secret: "<YOUR_SECRET_KEY>"
 ```
 
 If you are kind and have a time to Fork this, then please do. Thank you!!
