@@ -3,21 +3,9 @@
 // Insert custom styles here
 @import "./utils/main";
 
-.wrapper {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-
-  img {
-    width: 75%;
-    padding-bottom: 25px;
-  }
-
-  .headline {
-    text-align: center;
-    text-transform: capitalize;
-    padding-bottom: 25px;
-  }
+.headline {
+  text-align: center;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  padding: 50px 20px;
 }

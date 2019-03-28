@@ -1,9 +1,6 @@
 // Font Family Import: Poppins
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,600");
 
-// Font Family Import: Barlow Condensed
-@import url("https://fonts.googleapis.com/css?family=Barlow+Condensed:400,500,600|Ubuntu+Condensed");
-
 // Base Styles
 * {
   box-sizing: border-box;
@@ -25,7 +22,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Barlow Condensed", sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
   font-weight: 500 !important;
   margin-bottom: 0 !important;
 }
