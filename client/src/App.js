@@ -1,25 +1,36 @@
+/* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-console */
-import React from "react";
+import React, { Component } from "react";
 import axios from "axios";
+import PropTypes from "prop-types";
+import { withStyles } from "@material-ui/core/styles";
+import Button from "@material-ui/core/Button";
+import { name } from "../package.json";
 
-class App extends React.Component {
+const styles = theme => ({
+  button: {
+    margin: theme.spacing.unit,
+    textTransform: "capitalize"
+  },
+  p: {
+    color: "#2196F3"
+  }
+});
+
+class App extends Component {
   state = {
-    data: null
+    data: null,
+    isLogged: false
   };
 
-  componentDidMount() {
-    axios.get("/api/v.1/").then(res => {
-      this.setState({ data: res.data });
-    });
-  }
+  handleClick = async () => {
+    const res = await axios.get("/api/v.1/");
+    this.setState({ data: res.data, isLogged: true });
+  };
 
   render() {
-    const { data } = this.state;
-    const content = (
-      <div className="wrapper headline">
-        a mern stack development boilerplate, see console for app details
-      </div>
-    );
+    const { data, isLogged } = this.state;
+    const { classes } = this.props;
 
     if (data) {
       console.log(
@@ -32,10 +43,7 @@ class App extends React.Component {
         "color: #2196F3; font-weight: 600;"
       );
 
-      console.log(
-        "app name: %c mernstack-boilerplate",
-        "color: #2196F3; font-weight: 600;"
-      );
+      console.log(`app name: %c ${name}`, "color: #2196F3; font-weight: 600;");
 
       console.log(
         `author: %c ${data.fname} ${data.lname}`,
@@ -51,8 +59,27 @@ class App extends React.Component {
       console.log(`github page: ${data.github_page_URL}`);
     }
 
-    return <div className="App">{content}</div>;
+    return (
+      <div className="App wrapper headline">
+        a mern stack development boilerplate, click the button to see app info
+        &rarr;
+        <Button
+          onClick={this.handleClick}
+          variant="outlined"
+          className={classes.button}
+        >
+          Click me
+        </Button>
+        {isLogged ? (
+          <p className={classes.p}>view console to see app info</p>
+        ) : null}
+      </div>
+    );
   }
 }
 
-export default App;
+App.propTypes = {
+  classes: PropTypes.object.isRequired
+};
+
+export default withStyles(styles)(App);

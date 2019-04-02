@@ -6,21 +6,28 @@ const config = require("config");
 const path = require("path");
 const info = require("./routes/api/info");
 
-// Require DB config
+// DB and app initialization
 const db = config.get("mongodbURI");
+const dbConnectionOptions = {
+  useNewUrlParser: true
+};
 
-// Initialize app
 const app = express();
 
 // Use body parser middleware
 app.use(express.json());
 
 // Connect to MongoDB
-mongoose.Promise = global.Promise;
-mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("Connected to MongoDB Atlas..."))
-  .catch(err => console.log(err));
+const runDB = async () => {
+  try {
+    await mongoose.connect(db, dbConnectionOptions);
+    console.log("MongoDB connection established");
+  } catch (err) {
+    console.log(`ERROR - ${err}`);
+  }
+};
+
+runDB();
 
 // Use API routes
 app.use("/api/v.1", info);
@@ -36,6 +43,4 @@ if (process.env.NODE_ENV === "production") {
 
 // Listen to a port
 const PORT = process.env.PORT || 5000;
-app.listen(PORT, () =>
-  console.log(`App is running & listening at port ${PORT}`)
-);
+app.listen(PORT, () => console.log(`App is running port ${PORT}`));
